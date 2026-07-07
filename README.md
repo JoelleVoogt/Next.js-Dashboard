@@ -1,5 +1,7 @@
 # Acme Dashboard
 
+![Acme Dashboard](public/thumbnail.png)
+
 A full-stack invoice management dashboard built with Next.js App Router. Tracks customers, invoices, and revenue for a fictional company called Acme.
 
 ## Features
