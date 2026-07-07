@@ -1,68 +1,73 @@
 # Acme Dashboard
 
+Een full-stack dashboard voor factuurbeheer, gebouwd met Next.js App Router. Houdt klanten, facturen en omzet bij voor een fictief bedrijf genaamd Acme.
+
+Live: [start-building-with-next-js.vercel.app](https://start-building-with-next-js.vercel.app/)
+
 ![Acme Dashboard](public/thumbnail.png)
 
-A full-stack invoice management dashboard built with Next.js App Router. Tracks customers, invoices, and revenue for a fictional company called Acme.
+## Functies
 
-## Features
+- **Authenticatie** — inloggen op basis van inloggegevens via NextAuth v5
+- **Dashboardoverzicht** — omzetgrafiek, laatste facturen en samenvattingskaarten
+- **Facturen** — facturen aanmaken, bewerken en verwijderen met server-side validatie
+- **Klanten** — klanten bekijken met geaggregeerde factuurtotalen
+- **Zoeken & paginering** — URL-gebaseerd, werkt met server components
+- **Responsieve layout** — zijnavigatie klapt in tot een mobiele onderste navigatiebalk
+- **Laadstatussen** — skeleton UI via React Suspense streaming
 
-- **Authentication** — credential-based login via NextAuth v5
-- **Dashboard overview** — revenue chart, latest invoices, and summary cards
-- **Invoices** — create, edit, and delete invoices with server-side validation
-- **Customers** — view customers with aggregated invoice totals
-- **Search & pagination** — URL-based, works with server components
-- **Responsive layout** — side nav collapses to a mobile bottom nav
-- **Loading states** — skeleton UI via React Suspense streaming
-
-## Tech Stack
+## Techstack
 
 - [Next.js](https://nextjs.org) (App Router, Turbopack)
 - [TypeScript](https://www.typescriptlang.org)
 - [Tailwind CSS](https://tailwindcss.com)
-- [PostgreSQL](https://www.postgresql.org) via the `postgres` package
+- [PostgreSQL](https://www.postgresql.org) via het `postgres`-package
 - [NextAuth v5](https://authjs.dev) — credentials provider
-- [Zod](https://zod.dev) — form and server action validation
-- [bcrypt](https://github.com/kelektiv/node.bcrypt.js) — password hashing
+- [Zod](https://zod.dev) — validatie van formulieren en server actions
+- [bcrypt](https://github.com/kelektiv/node.bcrypt.js) — wachtwoord-hashing
 
-## Getting Started
+## Aan de slag
 
-**Prerequisites:** Node.js 18+, pnpm, a PostgreSQL database
+**Vereisten:** Node.js 18+, pnpm, een PostgreSQL-database
 
-1. Install dependencies:
+1. Installeer de dependencies:
+
    ```bash
    pnpm install
    ```
 
-2. Set up environment variables — copy `.env.example` to `.env` and fill in:
+2. Stel de omgevingsvariabelen in — kopieer `.env.example` naar `.env` en vul aan:
+
    ```
    POSTGRES_URL=
    AUTH_SECRET=
    ```
 
-3. Seed the database:
+3. Vul de database met testdata:
+
    ```
    GET /seed
    ```
 
-4. Start the dev server:
+4. Start de dev server:
    ```bash
    pnpm dev
    ```
 
-Open [http://localhost:3000](http://localhost:3000) and log in with your seeded credentials.
+Open [http://localhost:3000](http://localhost:3000) en log in met je aangemaakte inloggegevens.
 
-## Project Structure
+## Projectstructuur
 
 ```
 app/
 ├── dashboard/
-│   ├── (overview)/     # Dashboard home with revenue & invoice summaries
-│   ├── invoices/       # Invoice list, create, and edit pages
-│   └── customers/      # Customer list page
-├── login/              # Login page
+│   ├── (overview)/     # Dashboard-startpagina met omzet- en factuuroverzicht
+│   ├── invoices/       # Factuurlijst, aanmaak- en bewerkpagina's
+│   └── customers/      # Klantenlijstpagina
+├── login/              # Inlogpagina
 ├── lib/
-│   ├── actions.tsx     # Server actions (create/update/delete invoices, auth)
-│   ├── data.ts         # Database query functions
-│   └── definitions.ts  # Shared TypeScript types
-└── ui/                 # Shared components (nav, cards, forms, skeletons)
+│   ├── actions.tsx     # Server actions (facturen aanmaken/bijwerken/verwijderen, auth)
+│   ├── data.ts         # Functies voor databasequery's
+│   └── definitions.ts  # Gedeelde TypeScript-types
+└── ui/                 # Gedeelde componenten (navigatie, kaarten, formulieren, skeletons)
 ```
