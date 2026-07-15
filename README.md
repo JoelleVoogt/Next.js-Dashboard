@@ -12,7 +12,7 @@ Live: [start-building-with-next-js.vercel.app](https://start-building-with-next-
 - **Dashboardoverzicht** — omzetgrafiek, laatste facturen en samenvatting cards
 - **Facturen** — facturen aanmaken, bewerken en verwijderen met server-side validatie
 - **Klanten** — klanten bekijken met geaggregeerde factuurtotalen
-- **Zoeken & paginering** — URL-gebaseerd, werkt met server components
+- **Zoeken & paginering** — URL-based, werkt met server components
 - **Responsieve layout** — zijnavigatie klapt in tot een mobiele onderste navigatiebalk
 - **Laadstatussen** — skeleton UI via React Suspense streaming
 
